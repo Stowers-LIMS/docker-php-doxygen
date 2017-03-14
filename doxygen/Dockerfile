@@ -10,10 +10,6 @@ RUN apt-get update && \
 # install doxygen
 RUN curl -sS http://ftp.stack.nl/pub/users/dimitri/doxygen-1.8.11.linux.bin.tar.gz | tar xvz --strip-components=2 -C /usr/local/bin/ doxygen-1.8.11/bin/
 
-# install composer
-#RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
-
 # NOTE: must use json syntax process is not started in a subshell (and signals are passed correctly)
 WORKDIR /src
 ENTRYPOINT ["/usr/local/bin/doxygen"]
